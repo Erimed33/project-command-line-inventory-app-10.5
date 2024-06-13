@@ -22,7 +22,8 @@ switch(action) {
         writeToFile = true;
         break;
     case 'show':
-        inform(action, allMonsters);
+        const oneMonster= show(allMonsters, macaroniMonster);
+        inform(oneMonster)
         break;
     case 'update':
         inform(action, macaroniMonster);

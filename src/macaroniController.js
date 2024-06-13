@@ -23,12 +23,13 @@ const index = (monsters) => {
 
 }
 
-//show command
+
 
 const show = (monsters, monsterId) => {
 
     const monster = monsters.find((monster) => monster.id === monsterId)
-    return `${monster.id}: ${monster.name} cost ${monster.price}`
+    const priceInDollars = (monster.priceInCents / 100).toFixed(2)
+    return `${monster.id}: Macaroni Monster ${monster.name} is priced at $${priceInDollars}`
 
 }
 
