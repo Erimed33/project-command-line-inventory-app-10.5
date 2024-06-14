@@ -9,10 +9,10 @@
     "show": "node index.js show",
     "update": "node index.js update",
     "destroy": "node index.js destroy",
-    "score": "node index.js priceInCents"
+    "score": "node index.js total"
   },
   "keywords": [],
-  "author": "",
+  "author": "Erika Medina",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",

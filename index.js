@@ -1,7 +1,7 @@
 const { readJSONFile,
     writeJSONFile } = require('./src/helpers')
     
-const { create, index, show, destroy } = require('./src/macaroniController')
+const { create, index, show, edit, destroy } = require('./src/macaroniController')
 const inform = console.log;
 
 
@@ -26,15 +26,21 @@ switch(action) {
         inform(oneMonster)
         break;
     case 'update':
-        inform(action, macaroniMonster);
+        updatedMonsters = edit(allMonsters, macaroniMonster, process.argv[4], process.argv[5], process.argv[6])      
+        writeToFile = true;
         break;
     case 'destroy':
         updatedMonsters = destroy(allMonsters, macaroniMonster)
         writeToFile = true
         break;
-    case 'priceInCents':
-        inform(action, macaroniMonster);
+    case 'total':
+        const totalPriceInCents = monsters.reduce((acc, currentMonster) => acc + currentMonster.priceInCents, 0);
+        const totalPriceInDollars = (totalPriceInCents / 100).toFixed(2);
+        
+        inform(`Your grand total for all the Macaroni monsters is $${totalPriceInDollars}`)
         break;
+    case 'filter-by-price':
+        
     default:
         inform("There was an error")
     

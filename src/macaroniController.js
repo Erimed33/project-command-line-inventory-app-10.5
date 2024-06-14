@@ -48,8 +48,27 @@ const destroy = (monsters, monsterId) => {
 }
 
 
+const edit = (monsters, monsterId, updatedName, updatedType, updatedPrice) => {
+    // find the monster index, the number of position should be saved it to index
+    const index = monsters.findIndex((monster) => monster.id === monsterId)
+    if(index > -1) {
+        //assign new info
+        monsters[index].name = updatedName;
+        monsters[index].typeOfPasta = updatedType
+        monsters[index].priceInCents = updatedPrice
+        inform("Macaroni monster has been successfully updated.")
+
+    } else {
+        inform( "Animal is not found, no action was taken")
+    }
+return monsters
+}
+
+
 module.exports = { 
     create, 
     index, 
     show, 
-    destroy }
+    edit,
+    destroy,
+ }

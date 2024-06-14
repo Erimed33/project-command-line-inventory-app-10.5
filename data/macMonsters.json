@@ -3,18 +3,24 @@
     "id": "fsOX",
     "name": "AHHthena",
     "typeOfPasta": "Rotini",
-    "priceInCents": 3000
+    "priceInCents": "3000"
   },
   {
     "id": "d1gi",
-    "name": "VaportOOth",
+    "name": "Iickis",
     "typeOfPasta": "Penne",
-    "priceInCents": 4000
+    "priceInCents": "5000"
   },
   {
     "id": "aySC",
     "name": "Gremlin",
     "typeOfPasta": "Angelhair",
-    "priceInCents": 2300
+    "priceInCents": "2300"
+  },
+  {
+    "id": "R7tI",
+    "name": "JessiKAAH",
+    "typeOfPasta": "Farfalle",
+    "priceInCents": "6000"
   }
 ]
