@@ -1,4 +1,5 @@
 const { nanoid } = require('nanoid');
+const inform = console.log
 
 
 // create command
@@ -33,5 +34,22 @@ const show = (monsters, monsterId) => {
 
 }
 
+const destroy = (monsters, monsterId) => {
+    const index = monsters.findIndex((monster) => monster.id === monsterId)
+    // if the ID being fed through the parameter is the same as the monster element ID then
+    if (index > -1) {
+        monsters.splice(index, 1)
+        inform("The Macaroni Monster has been successfully removed.")
+        return monsters
+    } else {
+        inform("Macaroni Monster not found, no action taken")
+    }
+    return monsters
+}
 
-module.exports = { create, index, show}
+
+module.exports = { 
+    create, 
+    index, 
+    show, 
+    destroy }

@@ -1,7 +1,7 @@
 const { readJSONFile,
     writeJSONFile } = require('./src/helpers')
     
-const { create, index, show} = require('./src/macaroniController')
+const { create, index, show, destroy } = require('./src/macaroniController')
 const inform = console.log;
 
 
@@ -29,7 +29,8 @@ switch(action) {
         inform(action, macaroniMonster);
         break;
     case 'destroy':
-        inform(action, macaroniMonster );
+        updatedMonsters = destroy(allMonsters, macaroniMonster)
+        writeToFile = true
         break;
     case 'priceInCents':
         inform(action, macaroniMonster);

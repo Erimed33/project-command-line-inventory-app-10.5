@@ -1,11 +1,5 @@
 [
   {
-    "id": "OSY3",
-    "name": "StEEKve",
-    "typeOfPasta": "Bucatini",
-    "priceInCents": 379
-  },
-  {
     "id": "fsOX",
     "name": "AHHthena",
     "typeOfPasta": "Rotini",
@@ -16,5 +10,11 @@
     "name": "VaportOOth",
     "typeOfPasta": "Penne",
     "priceInCents": 4000
+  },
+  {
+    "id": "aySC",
+    "name": "Gremlin",
+    "typeOfPasta": "Angelhair",
+    "priceInCents": 2300
   }
 ]
