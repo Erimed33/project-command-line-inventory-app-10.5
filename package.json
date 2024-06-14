@@ -9,7 +9,8 @@
     "show": "node index.js show",
     "update": "node index.js update",
     "destroy": "node index.js destroy",
-    "score": "node index.js total"
+    "score": "node index.js total",
+    "filter-by-price": "node index.js filter-by-price"
   },
   "keywords": [],
   "author": "Erika Medina",
@@ -17,5 +18,8 @@
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
     "nanoid": "^3.3.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

@@ -1,7 +1,7 @@
 const { readJSONFile,
     writeJSONFile } = require('./src/helpers')
     
-const { create, index, show, edit, destroy } = require('./src/macaroniController')
+const { create, index, show, edit, destroy, filterByPrice } = require('./src/macaroniController')
 const inform = console.log;
 
 
@@ -40,7 +40,13 @@ switch(action) {
         inform(`Your grand total for all the Macaroni monsters is $${totalPriceInDollars}`)
         break;
     case 'filter-by-price':
+        const priceThresholdInDollars = parseFloat(process.argv[3]);
+        const priceThresholdInCents = priceThresholdInDollars * 100;
+        const filteredMonsters = filterByPrice(allMonsters, priceThresholdInCents);
+        inform(filteredMonsters.join('\n'));
+        break;
         
+
     default:
         inform("There was an error")
     

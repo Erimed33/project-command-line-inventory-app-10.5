@@ -64,6 +64,11 @@ const edit = (monsters, monsterId, updatedName, updatedType, updatedPrice) => {
 return monsters
 }
 
+const filterByPrice = (monsters, priceThreshold) => {
+    return monsters.filter(monster => monster.priceInCents > priceThreshold)
+                   .map(monster => `${monster.id}: ${monster.name} is priced at $${(monster.priceInCents / 100).toFixed(2)}`);
+};
+
 
 module.exports = { 
     create, 
@@ -71,4 +76,5 @@ module.exports = {
     show, 
     edit,
     destroy,
+    filterByPrice
  }
