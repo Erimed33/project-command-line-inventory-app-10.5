@@ -10,7 +10,8 @@
     "update": "node index.js update",
     "destroy": "node index.js destroy",
     "score": "node index.js total",
-    "filter-by-price": "node index.js filter-by-price"
+    "filter-by-price": "node index.js filter-by-price",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Erika Medina",
