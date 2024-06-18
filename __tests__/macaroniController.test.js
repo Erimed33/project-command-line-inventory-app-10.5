@@ -15,19 +15,19 @@ describe('macaroniController', () => {
     test('create a new monster', () => {
         const newMonster = create(monsters, 'Monster4', 'penne', 2000)
         expect(newMonster).toHaveLength(4)
-        expect(newMonster[3]).toMatchObject({ name: 'Monster4', typeOfpasta: 'penne', princeInCents: 2000 })
+        expect(newMonster[3]).toMatchObject({ name: 'Monster4', typeOfPasta: 'penne', priceInCents: 2000 })
     })
     test('index lists all monsters', () => {
         const result = index(monsters)
         expect(result).toContain('1 Monster1')
         expect(result).toContain('2 Monster2')
-        except(result).toContain('3 Monster3')
+        expect(result).toContain('3 Monster3')
     })
 
 
     test('show a monster by ID', () => {
         const result = show(monsters, '2')
-        expect(result).toBe('2: Macaroni Monster Monster2 is price at $10.00')
+        expect(result).toBe('2: Macaroni Monster Monster2 is priced at $10.00')
     })
          
     test('edit a monster by ID', () => {

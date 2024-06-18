@@ -8,7 +8,7 @@ const create = (monsters, monsterName, type, price) => {
         id: nanoid(4),
         name: monsterName,
         typeOfPasta: type,
-        priceInCents: price,
+        priceInCents: parseInt(price, 10),
     
 }
 console.log("New Monster created:", newMonster)
@@ -29,7 +29,12 @@ const index = (monsters) => {
 const show = (monsters, monsterId) => {
 
     const monster = monsters.find((monster) => monster.id === monsterId)
-    const priceInDollars = (monster.priceInCents / 100).toFixed(2)
+    if (!monster) {
+        return `Macaroni monster with ID ${monsterId} not found.`
+    }
+    console.log(`price in cents: ${monsters.priceInCents}`)
+    const priceInDollars = (monsters.priceInCents / 100).toFixed(2)
+    console.log(`price in cents: $${monsters.priceInCents}`)
     return `${monster.id}: Macaroni Monster ${monster.name} is priced at $${priceInDollars}`
 
 }
@@ -64,8 +69,8 @@ const edit = (monsters, monsterId, updatedName, updatedType, updatedPrice) => {
 return monsters
 }
 
-const filterByPrice = (monsters, priceThreshold) => {
-    return monsters.filter(monster => monster.priceInCents > priceThreshold)
+const filterByPrice = (monsters, priceThreshold, comparison = 'greater') => {
+    return monsters.filter(monster => comparison === 'greater' ? monster.priceInCents > priceThreshold : monster.priceInCents < priceThreshold)
                    .map(monster => `${monster.id}: ${monster.name} is priced at $${(monster.priceInCents / 100).toFixed(2)}`);
 };
 
